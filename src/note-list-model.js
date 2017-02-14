@@ -2,19 +2,18 @@
 
 (function(exports) {
 
-  var notelist = [];
-
+  var notes = [];
 
   function NoteList() {
-      };
+  };
 
   NoteList.prototype.getNoteList = function () {
-    return notelist;
+    return notes;
   }
 
   NoteList.prototype.addNote = function (text) {
     var note = new Note(text);
-    return notelist.push(note);
+    return notes.push(note);
   }
 
 exports.NoteList = NoteList;

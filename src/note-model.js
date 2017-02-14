@@ -3,6 +3,7 @@
 (function(exports) {
 
   var text = "";
+  
   function Note(string) {
     text = string;
   };
