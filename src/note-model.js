@@ -2,14 +2,14 @@
 
 (function(exports) {
 
-  var text = "";
-  
+  // var text = "";
+
   function Note(string) {
-    text = string;
+    this.text = string;
   };
 
   Note.prototype.getText = function () {
-    return text;
+    return this.text;
   }
 
 exports.Note = Note;

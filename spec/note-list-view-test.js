@@ -6,17 +6,11 @@ function testNoteViewtMakesInstanceOfNoteView() {
 
 
 function testNoteViewReturnFormattedList() {
-  var note1 = 'Text1';
-  var note2 = 'Text2';
   var notelist = new NoteList();
-
-  notelist.addNote(note1);
-  notelist.addNote(note2);
-  console.log(notelist.getNoteList());
-
+  notelist.addNote("note1");
+  notelist.addNote("note2");
   var noteview = new NoteView(notelist);
-  var htmlString = "<ul><li><div>Text1</div></li><li><div>Text2</div></li></ul>"
-  console.log(noteview.displayNotes());
+  var htmlString = "<ul><li><div>note1</div></li><li><div>note2</div></li></ul>"
   assert.isTrue(noteview.displayNotes() === htmlString);
 };
 
