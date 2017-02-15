@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/Sammckay12/notes/issues"
   },
-  "homepage": "https://github.com/Sammckay12/notes#readme"
+  "homepage": "https://github.com/Sammckay12/notes#readme",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
 }
