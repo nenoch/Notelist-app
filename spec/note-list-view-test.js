@@ -16,3 +16,13 @@ function testNoteViewReturnFormattedList() {
 
 testNoteViewtMakesInstanceOfNoteView();
 testNoteViewReturnFormattedList();
+
+function testNoteViewFirst20Characters(){
+  var notelist = new NoteList();
+  notelist.addNote("We are adding a note this part is past 20");
+  var noteview = new NoteView(notelist);
+  var htmlString = "<ul><li><div>We are adding a note</div></li></ul>"
+  assert.isTrue(noteview.displayNotes()===htmlString);
+}
+
+testNoteViewFirst20Characters()

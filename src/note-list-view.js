@@ -11,7 +11,7 @@
   NoteView.prototype.displayNotes = function () {
     var string = ""
       for (var i = 0; i < this._notelist.length; i++) {
-      string += "<li><div>" + this._notelist[i].getText() + "</div></li>"
+      string += "<li><div>" + this._notelist[i].getText().substr(0,20) + "</div></li>"
     }
     return "<ul>" + string + "</ul>";
   }
