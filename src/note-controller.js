@@ -2,18 +2,23 @@
 
 
 (function(exports){
-  function getHTML(){
-    var getter = document.getElementById('app');
-    return getter
+
+  function NoteController(notelist){
+      this._noteview = new NoteView(notelist)
   }
 
-  function changeHTML(){
-    var elem = getHTML()
-    elem.innerHTML = "Howdy"
+  function getAppElement(){
+    return document.getElementById('app');
   }
 
-  exports.getHTML = getHTML
-  exports.changeHTML = changeHTML
+
+  NoteController.prototype.changeHTML=function(){
+    var elem = getAppElement()
+    var noteviewHTML = this._noteview.displayNotes()
+    elem.innerHTML = noteviewHTML
+  }
+
+  exports.NoteController = NoteController
 
 
 })(this);
