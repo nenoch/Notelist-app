@@ -3,19 +3,18 @@
 
 (function(exports){
 
-  function NoteController(notelist){
-      this._noteview = new NoteView(notelist)
+  function NoteController(noteview, element){
+    this._noteview = noteview;
+    this._element = element;
   }
 
-  function getAppElement(){
-    return document.getElementById('app');
-  }
+  // function getAppElement(){
+  //   return document.getElementById('app');
+  // }
 
 
   NoteController.prototype.changeHTML=function(){
-    var elem = getAppElement()
-    var noteviewHTML = this._noteview.displayNotes()
-    elem.innerHTML = noteviewHTML
+    this._element.innerHTML = this._noteview;
   }
 
   exports.NoteController = NoteController
