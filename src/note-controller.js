@@ -3,8 +3,8 @@
 
 (function(exports){
 
-  function NoteController(noteview, element){
-    this._noteview = noteview;
+  function NoteController(noteviewOutput, element){
+    this._noteview = noteviewOutput;
     this._element = element;
   }
 

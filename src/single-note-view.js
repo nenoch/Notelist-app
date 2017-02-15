@@ -8,8 +8,8 @@
   }
 
   SingleNoteView.prototype.singleHTML=function(){
-    var string = "<div>"+this._note.getText()+"</div>"
-    return string
+    var string = "<div>" + this._note.getText() + "</div>";
+    return string;
   }
 
 

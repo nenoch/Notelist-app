@@ -16,5 +16,13 @@
     return "<ul>" + string + "</ul>";
   }
 
+  NoteView.prototype.displayHref = function () {
+      var competeHref = "";
+      for (var i = 0; i < this._notelist.length; i++) {
+      completeHref += "<a href='#notes/" + i + "'>Note" + i +"</a>"
+    }
+    return completeHref;
+  }
+
 exports.NoteView = NoteView;
 })(this);

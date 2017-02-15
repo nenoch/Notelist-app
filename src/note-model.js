@@ -2,10 +2,12 @@
 
 (function(exports) {
 
-  // var text = "";
+  var count = 0;
 
   function Note(string) {
     this.text = string;
+    this.id = count;
+    count ++;
   };
 
   Note.prototype.getText = function () {

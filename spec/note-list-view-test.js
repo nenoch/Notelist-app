@@ -26,3 +26,16 @@ function testNoteViewFirst20Characters(){
 }
 
 testNoteViewFirst20Characters()
+
+function testNoteViewSingleNoteOnOwnURL(){
+  var notelist = new NoteList();
+  notelist.addNote("We are adding a note this part is past 20");
+  notelist.addNote("We are having a note this part is past 20");
+  notelist.addNote("We are seeing a note this part is past 20");
+  var noteview = new NoteView(notelist);
+  window.location.href = "http://localhost:8080#notes/1"
+  var el = document.getElementById('note')
+  assert.isTrue(el.innerHTML === "<div>We are having a note this part is past 20</div>");
+}
+
+testNoteViewSingleNoteOnOwnURL()
