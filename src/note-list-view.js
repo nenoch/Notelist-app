@@ -2,8 +2,8 @@
 
 (function(exports) {
 
-  function NoteView(notelistObj) {
-    this._notelist = notelistObj.getNoteList();
+  function NoteView(notelist) {
+    this._notelist = notelist.getNoteList();
   };
 
   NoteView.prototype.displayNotes = function () {
