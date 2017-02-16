@@ -8,11 +8,6 @@
     this._element = element;
   }
 
-  // function getAppElement(){
-  //   return document.getElementById('app');
-  // }
-
-
   NoteController.prototype.changeHTML=function(){
     this._element.innerHTML = this._noteview;
   }

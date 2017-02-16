@@ -15,7 +15,7 @@ function testNoteControllerPrintsHTMLtoDocument() {
   var fakeDoc = document.createElement('div')
   var notecontroller = new NoteController(noteviewOutput, fakeDoc);
   notecontroller.changeHTML();
-  assert.isTrue(fakeDoc.innerHTML === "<ul><li><div>Great news!</div></li></ul>");
+  assert.isTrue(fakeDoc.innerHTML === "<ul><li><div>Great news!...</div></li></ul>");
 };
 
 // testNoteControllerMakesInstanceOfNoteView();

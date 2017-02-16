@@ -10,7 +10,7 @@ function testNoteViewReturnFormattedList() {
   notelist.addNote("note1");
   notelist.addNote("note2");
   var noteview = new NoteView(notelist);
-  var htmlString = "<ul><li><div>note1</div></li><li><div>note2</div></li></ul>"
+  var htmlString = "<ul><li><a href='#notes/0'><div>note1...</div></a></li><li><a href='#notes/1'><div>note2...</div></a></li></ul>"
   assert.isTrue(noteview.displayNotes() === htmlString);
 };
 
@@ -21,21 +21,17 @@ function testNoteViewFirst20Characters(){
   var notelist = new NoteList();
   notelist.addNote("We are adding a note this part is past 20");
   var noteview = new NoteView(notelist);
-  var htmlString = "<ul><li><div>We are adding a note</div></li></ul>"
-  assert.isTrue(noteview.displayNotes()===htmlString);
+  var htmlString = "<ul><li><a href='#notes/0'><div>We are adding a note...</div></a></li></ul>"
+  assert.isTrue(noteview.displayNotes() === htmlString);
 }
 
 testNoteViewFirst20Characters()
 
-function testNoteViewSingleNoteOnOwnURL(){
+function testNoteViewSingleNoteOwnURL(){
   var notelist = new NoteList();
   notelist.addNote("We are adding a note this part is past 20");
-  notelist.addNote("We are having a note this part is past 20");
-  notelist.addNote("We are seeing a note this part is past 20");
   var noteview = new NoteView(notelist);
-  window.location.href = "http://localhost:8080#notes/1"
-  var el = document.getElementById('note')
-  assert.isTrue(el.innerHTML === "<div>We are having a note this part is past 20</div>");
+  assert.isTrue(noteview.displayNotes() === "<ul><li><a href='#notes/0'><div>We are adding a note...</div></a></li></ul>");
 }
 
-testNoteViewSingleNoteOnOwnURL()
+testNoteViewSingleNoteOwnURL()
