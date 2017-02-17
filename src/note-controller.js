@@ -3,31 +3,31 @@
 
 (function(exports){
 
-  function NoteController(noteview, element){
+  function NoteController(noteview){
     this._noteview = noteview;
-    this._element = element;
+    this.notelist = this._noteview._notelist
+    // this._element = element;
   }
 
   NoteController.prototype.printNotesHTML = function(){
-    this._element.innerHTML = this._noteview.displayNotes();
+    document.getElementById('app').innerHTML = this._noteview.displayNotes();
   }
 
-  function makeURLShowSingleNoteForCurrentPage() {
+  NoteController.prototype.makeURLShowSingleNoteForCurrentPage = function() {
     window.addEventListener("hashchange", showSingleNoteForCurrentPage);
   }
 
   function showSingleNoteForCurrentPage() {
-    showNote(getNoteFromUrl(window.location));
+    showNote(getNoteFromUrl(location.hash));
   }
 
   function getNoteFromUrl(location) {
-    return location.hash.split("#notes/")[1];
+    return parseInt(location.split("#notes/")[1]);
   }
 
-  NoteController.prototype.showNote = function() {
-    This._element.getElementById("note")
-    var singlenote = new SingleNoteView(this._noteview._notelist[0]);
-    document.innerHTML = singlenote.singleHTML();
+  function showNote(id) {
+    var htmlstring = new SingleNoteView(notelist._notes[id]).singleHTML();
+    document.getElementById("note").innerHTML = htmlstring;
   }
 
   exports.NoteController = NoteController
